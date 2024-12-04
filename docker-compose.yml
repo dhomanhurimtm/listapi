@@ -9,4 +9,5 @@ services:
             - 3317:3317
         volumes:
             - ../APIGateway/config/krakend/:/usr/src/app/public/unified
+            - ../apigateway_snc/config/krakend/:/usr/src/app/public/snc
         restart: always

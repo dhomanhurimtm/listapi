@@ -10,7 +10,8 @@ router.get("/", function (req, res, next) {
 });
 router.get("/:id", function (req, res, next) {
     console.log(req.params.id);
-    const filePath = `./public/${req.params.id}/krakend.json`;
+    const data = req.params.id;
+    const filePath = `./public/${data}/krakend.json`;
     try {
         // Membaca file JSON
         const fileContent = fs.readFileSync(filePath, "utf8");
@@ -23,7 +24,7 @@ router.get("/:id", function (req, res, next) {
 
         // Menyusun data endpoint dan method
         const endpoints = jsonConfig.endpoints.map((endpoint) => ({
-            endpoint: endpoint.endpoint,
+            endpoint: (data == "snc" ? "https://api.snc.id/v1/" : "https://apiunified.snc.id/v1/") + endpoint.endpoint,
             method: endpoint.method,
         }));
 
