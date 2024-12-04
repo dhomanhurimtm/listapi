@@ -8,5 +8,5 @@ services:
         ports:
             - 3317:3317
         volumes:
-            - ../APIGateway/config/krakend/:public/unified
+            - ../APIGateway/config/krakend/:/usr/src/app/public/unified
         restart: always
