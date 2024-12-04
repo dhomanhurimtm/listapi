@@ -7,4 +7,6 @@ services:
             target: apilistgw
         ports:
             - 3317:3317
+        volume:
+            - ../APIGateway/config/krakend/:public/unified
         restart: always
