@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+    api:
+        container_name: apilistgw
+        build:
+            context: ./
+            target: apilistgw
+        ports:
+            - 3317:3317
+        restart: always
