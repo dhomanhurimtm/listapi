@@ -24,7 +24,7 @@ router.get("/:id", function (req, res, next) {
 
         // Menyusun data endpoint dan method
         const endpoints = jsonConfig.endpoints.map((endpoint) => ({
-            endpoint: (data == "snc" ? "https://api.snc.id/v1/" : "https://apiunified.snc.id/v1/") + endpoint.endpoint,
+            endpoint: (data == "snc" ? "https://api.snc.id/" : "https://apiunified.snc.id/") + endpoint.endpoint,
             method: endpoint.method,
         }));
 
